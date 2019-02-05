@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "page/login/login",
+    "page/createOrder/createOrder",
+    "page/register/register",
+    "page/allOrders/allOrders",
+    "page/todayOrders/todayOrders"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "维云医疗智能科技",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "backgroundColor": "#f8f8f8"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#1bada6",
+    "borderStyle": "black",
+    "backgroundColor": "ffffff",
+    "list": [
+      {
+        "pagePath": "page/createOrder/createOrder",
+        "text": "新建"
+      },
+      {
+        "pagePath": "page/todayOrders/todayOrders",
+        "text": "今日订单"
+      },
+      {
+        "pagePath": "page/allOrders/allOrders",
+        "text": "全部订单"
+      }
+    ]
+  }
+}

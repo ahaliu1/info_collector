@@ -1,0 +1,44 @@
+<!--page/login/login.wxml-->
+<image mode='scaleToFill' src='../../imgs/bone.jpg' style="width: 100%; height: 40%" ></image>
+<view>
+  <form bindsubmit='formSubmit'>
+    <view class="weui-cells__title">手机号码</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <input name='phoneNum' placeholder='请输入手机号码' class="weui-input"/>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells__title">密码</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <input name='password' password='true' placeholder="请输入密码" class="weui-input"/>
+        </view>
+      </view>
+    </view>
+    
+
+    <view class="button-sp-area">
+      <button form-type='submit' class="weui-btn" type="primary" plain="true">登陆</button>
+      <button bindtap='sign_up' class="weui-btn" type="primary" plain="true">注册</button>
+    </view>
+    <view wx:if="{{user_not_exist_flag}}">
+      <icon type="warn" size="20" />
+      <text>用户不存在</text>
+    </view>
+    <view wx:if="{{wrong_password_flag}}">
+      <icon type="warn" size="20" />
+      <text>密码错误或身份错误</text>
+    </view>
+    <view wx:if="{{password_flag}}">
+      <icon type="warn" size="20" />
+      <text>请输入密码</text>
+    </view>
+    <view wx:if="{{phone_num_flag}}">
+      <icon type="warn" size="20" />
+      <text>号码为空或者不符合规范</text>
+    </view>
+  </form>
+</view>

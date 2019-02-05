@@ -1,0 +1,82 @@
+<!--page/createOrder/createOrder.wxml-->
+<view style='text-align:center;'>
+  <text>新建订单</text>
+</view>
+<form bindsubmit='formSubmit'>
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">病人姓名</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name='patientName' value='{{patientName}}' class="weui-input" placeholder="请输入姓名" />
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">性别</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindPickerChange" class="weui-input" name='gender' value="{{index}}" range="{{gender}}">
+          <view class="picker">
+            {{gender[index]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+
+
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">住院号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name='inpatientId' value='{{inpatientId}}' class="weui-input" placeholder="请输入住院号" />
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">床号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name='bedId' value='{{bedId}}' class="weui-input" placeholder="请输入床号" />
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">CT号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name='CTId' value='{{CTId}}' class="weui-input" placeholder="CT号" />
+      </view>
+    </view>
+  </view>
+
+
+  <view style='margin-top:40px'>
+    <button form-type='submit'>提交</button>
+  </view>
+
+
+  <view wx:if="{{patientName_flag}}">
+    <icon type="warn" size="20" />
+    <text>病人姓名不能为空</text>
+  </view>
+  <view wx:if="{{inpatientId_flag}}">
+    <icon type="warn" size="20" />
+    <text>住院号不能为空</text>
+  </view>
+</form>
